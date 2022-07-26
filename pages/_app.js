@@ -6,7 +6,7 @@ import { RecoilRoot } from 'recoil';
 import { useUpdateChecker } from '../src/useUpdateChecker';
 
 function MyApp({ Component, pageProps }) {
-  useUpdateChecker();
+  // useUpdateChecker();
   return <RecoilRoot> <Head>
       <title>ar.page</title>
       <meta name="description" content="ar.page | faq" />
