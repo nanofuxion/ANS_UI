@@ -48,7 +48,7 @@ export const Personal = (props: Props) => {
 
                 <div className="lg:truncate w-full lg:col-span-2 lg:row-span-1">
                     <h1 className="text-xl mx-auto font-extrabold text-sviolet">Address</h1>
-                    <a href={`https://viewblock.io/arweave/address/${props.userInfo.user}`} className="text-lg text-white mx-auto text-center flex w-min float-left">
+                    <a href={`https://v2.viewblock.io/arweave/address/${props.userInfo.user}`} className="text-lg text-white mx-auto text-center flex w-min float-left">
 
                         {/* {props.userInfo.user} */}
                         <svg id="Layer_1" className="h-[1.125rem] mt-1 mr-2" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 133.06 133.06"><defs>
