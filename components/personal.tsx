@@ -9,6 +9,7 @@ import Header from './arconnect/arconnect_loader'; //@ts-ignore
 // import ReactRoundedImage from "react-rounded-image";
 import { createGlobalStyle } from 'styled-components';
 
+
 type Props = {
     children?: any;
     className: string;
@@ -18,21 +19,25 @@ export const Personal = (props: Props) => {
 
     const [color, setColor] = React.useState<string>('theme(\'colors.back\')')
 
-    const GlobalStyles = createGlobalStyle`
-        .avatarRing:hover {
-            border-color: ${props.userInfo.address_color};
-        }
-    `;
+    // const GlobalStyles = createGlobalStyle`
+    //     .avatarRing:hover {
+    //         border-color: ${props.userInfo.address_color};
+    //     }
+    // `;
+
+    React.useEffect(() => {
+        document.documentElement.style.setProperty('--hover-color', props.userInfo.address_color);
+    }, [props.userInfo.address_color])
 
     return (
         <div className={props.className}>
-            <GlobalStyles />
+            {/* <GlobalStyles /> */}
             <div className="flex flex-wrap lg:grid lg:grid-cols-6 lg:grid-rows-3 w-full my-2 lg:p-4 p-8 mb-8 text-sviolet gap-y-4 items-end relative">
                 <div className="w-full col-span-3 row-span-1 lg:col-span-2 lg:row-span-3 grid grid-cols-1 my-0 lg:mb-10">
                     {(props.userInfo.avatar.length <= 0) ?
                         <div className="mx-auto rounded-full h-32 w-32 mb-2" style={{ backgroundColor: props.userInfo.address_color }}></div> :
                         // <img className="mx-auto bg-black rounded-full" src={`https://arweave.net/${props.userInfo.avatar}`} />}
-                        <div className="mx-auto rounded-full h-32 w-32 overflow-hidden mb-2 relative border-4 border-back avatarRing">
+                        <div style={{}} className="mx-auto rounded-full h-32 w-32 overflow-hidden mb-2 relative border-4 border-back avatarRing">
                             <Image src={`https://arweave.net/${props.userInfo.avatar}`} alt="Profile Image" layout="fill" objectFit="cover" />
 
                         </div>

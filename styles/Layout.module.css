@@ -2,3 +2,7 @@
   min-height: 100vh;
   height: 100vh;
 }
+
+.avatarRing:hover {
+  border-color: --hover-color;
+}

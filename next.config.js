@@ -1,6 +1,6 @@
 module.exports = {
   reactStrictMode: true,
   images: {
-    domains: ['arweave.net']
+    domains: ['arweave.net', 'pz-prepnb.meson.network']
   }
 }
